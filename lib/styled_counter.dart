@@ -18,7 +18,11 @@ class StyledCounter extends StatelessWidget {
       ),
       child: Text(
         '$counter',
-        style: Theme.of(context).textTheme.headlineMedium,
+        style: const TextStyle(
+          color: Colors.lightBlue,
+          fontSize: 32,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
