@@ -1,4 +1,4 @@
-import 'package:curso_iniciacion_flutter/styled_counter.dart';
+import 'package:curso_iniciacion_flutter/counter_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,20 +16,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Curso Iniciación Flutter'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  int _counter = 0;
 
-  MyHomePage({super.key, required this.title});
-
-  void _incrementCounter() {
-    _counter = _counter + 1;
-  }
+  const MyHomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -38,29 +33,8 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            StyledCounter(
-              counter: _counter,
-              color: Colors.blue,
-              textStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: const Center(
+        child: CounterButton(),
       ),
     );
   }
