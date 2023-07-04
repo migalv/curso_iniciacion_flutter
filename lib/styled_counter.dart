@@ -1,28 +1,40 @@
 import 'package:flutter/material.dart';
 
 class StyledCounter extends StatelessWidget {
+  final Color color;
   final int counter;
+  final TextStyle? textStyle;
 
   const StyledCounter({
     super.key,
     required this.counter,
+    required this.color,
+    this.textStyle,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.orange,
+        color: color,
+        border: Border.all(
+          color: Colors.red,
+          width: 4,
+        ),
+        boxShadow: const [
+          BoxShadow(
+            blurRadius: 10,
+            color: Colors.black26,
+            offset: Offset(3, 5),
+            spreadRadius: 2,
+          ),
+        ],
       ),
       child: Text(
         '$counter',
-        style: const TextStyle(
-          color: Colors.lightBlue,
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
-        ),
+        style: textStyle,
       ),
     );
   }

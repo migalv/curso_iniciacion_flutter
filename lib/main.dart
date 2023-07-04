@@ -53,7 +53,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            StyledCounter(counter: _counter),
+            StyledCounter(
+              counter: _counter,
+              color: Colors.blue,
+              textStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
